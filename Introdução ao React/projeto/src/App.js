@@ -22,8 +22,7 @@ function App() {
     api.get('rota').then(response => {
     setProjects(response.data);
     })
-  }, [])
-  */
+  }, [])*/
 
   /*
     useEffect dispara um função na exibição
@@ -31,11 +30,18 @@ function App() {
     2. Quando disparar? (array de dependências => quando vazio executa quando o componente é exibido em tela)
   */
   
-  function handleAddProject(){
+  async function handleAddProject(){
     //projects.push(`Novo projeto ${Date.now()}`);
     
-    setProjects([...projects, `Novo projeto ${Date.now()}`])
-  }
+    setProjects([...projects, `Novo projeto ${Date.now()}`]) //comentaria se tivesse uma api
+
+    /*const response = await api.post('rota',{
+      title: `Novo projeto ${Date.now()}`,
+      owner: "Diego Fernandes"*/
+    //}) /*podemos fazer uma nova requisição*/
+    /*const project = response.data;
+
+    setProjects(...projects, project)*/
   /*
     Ao invés de usar projects na key, podemos utilizar o id da API
   */
